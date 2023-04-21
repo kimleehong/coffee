@@ -1,0 +1,707 @@
+/* 폰트 */
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff") format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff") format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf") format("truetype");
+}
+
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+/* 노말라이즈 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* 라이브러리 */
+
+.btn {
+  padding: 7px 15px;
+  border-radius: 5px;
+  transition: background-color .3s;
+  display: none;
+  text-align: center;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+/* custom */
+/* top-bar */
+.top-bar {
+  background-color: #f6f5ef;
+  padding: 10px 0 0 0;
+  border-top: 2px solid black;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.top-bar * {
+  z-index: 999;
+}
+
+.top-bar__top,
+.top-bar__bottom {
+  width: 1100px;
+}
+
+/* top-bar__top */
+.top-bar__top {
+  color: #555555;
+}
+
+.top-bar__top>ul {
+  background-image: url("https://www.starbucks.co.kr/common/img/common/sdown_util_sep.png");
+  background-position-x: 130%;
+}
+
+.top-bar__top>ul>li>a {
+  margin: 0 14px;
+}
+
+.top-bar__top>ul>li:hover>a {
+  text-decoration: underline;
+}
+
+.top-bar__top>a {
+  margin: 0 45px 0 10px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* top-bar__bottom */
+.bottom-menu>ul>li>a {
+  display: block;
+  padding: 26px;
+  color: #333333;
+}
+
+.bottom-menu>ul>li:hover>a {
+  text-decoration: underline;
+  color: #669900;
+  background-color: #2c2a29;
+}
+
+.bottom-menu>ul>li:hover>div {
+  max-height: 600px;
+}
+
+/* megamenu */
+/* megamenu-wrap */
+.megamenu-wrap {
+  top: 121px;
+  left: 0;
+  right: 0;
+  background-color: #2c2a29;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.submega {
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-image: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+}
+
+.megamenu,
+.submega__txt {
+  width: 1080px;
+}
+
+.megamenu>ul {
+  width: calc(100% / 5);
+}
+
+.megamenu>ul:not(ul:nth-child(6n)) {
+  margin-bottom: 30px;
+}
+
+.megamenu>ul>li:first-child {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.megamenu>ul>li:not(li:first-child) {
+  font-size: 12px;
+  color: #999999;
+  line-height: 22px;
+}
+
+.txt-group {
+  font-size: 12px;
+}
+
+.txt__group>div:first-child {
+  color: #999999;
+  font-weight: bold;
+}
+
+.txt__group>div:nth-child(2) {
+  color: #64a70b;
+}
+
+/* banner */
+
+.banner-wrap {
+  background-image: url("https://image.istarbucks.co.kr/img/event/2021/2021_summer2_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 646px;
+}
+
+.banner-img {
+  width: 1080px;
+}
+
+.banner-img__slogan {
+  max-width: 352px;
+  margin-top: 6.6%;
+  margin-left: 1.8%;
+  display: none;
+}
+
+.banner-btn__more {
+  margin-top: 23%;
+  margin-left: 12%;
+}
+
+
+.drink-1 {
+  bottom: 7.4%;
+  left: 33.1%;
+  max-width: 404px;
+  display: none;
+}
+
+.drink-1::after,
+.drink-2::after,
+.drink-3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 79px;
+}
+
+.drink-1::after {
+  background-image: url("https://image.istarbucks.co.kr/img/event/2021/2021_summer2_frappuccino_tit.png");
+  bottom: 19.2%;
+  left: -59.9%;
+  width: 60%;
+  max-width: 240px;
+}
+
+.drink-2 {
+  bottom: 30.4%;
+  right: 11.3%;
+  max-width: 358px;
+  display: none;
+}
+
+.drink-2::after {
+  background-image: url("https://image.istarbucks.co.kr/img/event/2021/2021_summer2_blended_tit.png");
+  top: 104.6%;
+  left: -7.5%;
+  width: 62.5%;
+  max-width: 222px;
+}
+
+.drink-3 {
+  bottom: 21.7%;
+  right: -11.5%;
+  max-width: 379px;
+  display: none;
+}
+
+.drink-3::after {
+  background-image: url(https://image.istarbucks.co.kr/img/event/2021/2021_summer2_iced_tea_tit.png);
+  top: 103.7%;
+  left: -4.4%;
+  width: 66%;
+  max-width: 248px;
+}
+
+
+.banner-btn__more>a {
+  font-size: 15px;
+  border: 2px solid #595857;
+  color: #595857;
+}
+
+.banner-btn__more>a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  text-decoration: underline;
+}
+
+
+/* sub-banner */
+.sub-banner__left {
+  width: 55%;
+}
+
+.sub-banner__left>div {
+  width: 730px;
+}
+
+.sub-banner__left>div>div:last-child>img {
+  width: 36px;
+  height: 36px;
+}
+
+.sub-banner__right {
+  width: 45%;
+  background-color: #f6f5ef;
+}
+
+.sub-banner__right>div {
+  width: 550px;
+}
+
+.sub-banner__right>div>div:first-child>img {
+  width: 129px;
+}
+
+.sub-banner__right>div>div:last-child>img {
+  width: 35px;
+  height: 35px;
+}
+
+
+/* section-slide */
+.banner-slide {
+  overflow: hidden;
+  background-color: #F6F5EF;
+}
+
+.banner-slide.show .swiper-container {
+  width: 820px;
+  height: 660px;
+  overflow: visible;
+  transition: height .7s;
+}
+
+.banner-slide.hide .swiper-container {
+  height: 0;
+  overflow: hidden;
+  transition: height .7s;
+}
+
+.slide__btn {
+  font-size: 1.1rem;
+  width: 125px;
+  height: 38px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  left: 50%;
+  bottom: 17%;
+  transform: translatex(-50%);
+  transition: .7s;
+}
+
+.slide__btn:hover {
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.banner-slide .swiper-button-prev,
+.banner-slide .swiper-button-next {
+  width: 51px;
+  height: 51px;
+}
+
+.banner-slide .swiper-button-prev {
+  margin-left: -100px;
+}
+
+.banner-slide .swiper-button-next {
+  margin-right: -100px;
+}
+
+.banner-slide .swiper-button-prev::after,
+.banner-slide .swiper-button-next::after {
+  display: none;
+}
+
+.banner-slide .swiper-button-prev>div,
+.banner-slide .swiper-button-next>div {
+  border: 2px solid #222;
+  border-radius: 27.5px;
+  width: 51px;
+  height: 51px;
+  transition: background-color .7s;
+}
+
+.banner-slide .swiper-button-prev>div {
+  background: url("https://www.starbucks.co.kr/common/img/common/arrow_left_on.png") no-repeat center center transparent;
+}
+
+
+.banner-slide .swiper-button-prev>div:hover,
+.banner-slide .swiper-button-next>div:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-slide .swiper-button-next>div {
+  background: url("https://www.starbucks.co.kr/common/img/common/arrow_right_on.png") no-repeat center center transparent;
+}
+
+
+.banner-slide .swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+}
+
+.banner-slide .swiper-pagination-bullet-active {
+  background-color: white;
+  border: 3px solid green;
+}
+
+.swiper-button-play {
+  width: 9px;
+  height: 12px;
+  bottom: 14px;
+  left: 50%;
+  margin-left: -45px;
+  z-index: 11;
+}
+
+.swiper-button-play.start {
+  background: url("https://www.starbucks.co.kr/common/img/main/main_prom_stop.png") no-repeat center center transparent;
+}
+
+.swiper-button-play.stop {
+  background: url("https://www.starbucks.co.kr/common/img/main/main_prom_play.png") no-repeat center center transparent;
+}
+
+.banner-slide .swiper-slide {
+  opacity: 30%;
+  margin-top: 50px;
+}
+
+.banner-slide .swiper-slide-active {
+  opacity: 100%;
+}
+
+
+/* section-1 */
+
+.section-1 {
+  width: 100%;
+  background-color: #1E3932;
+  height: 237px;
+}
+
+.section-1-wrap,
+.section-2-wrap {
+  width: 1080px;
+}
+
+.section-1__txt-1 {
+  border-bottom: 1px solid #4b615b;
+}
+
+.section-1__txt-1 a:last-child,
+.section-1__txt-2 a {
+  border: 2px solid white;
+}
+
+.section-1__txt-2 a {
+  padding: 7px 18px;
+}
+
+.section-1__txt-1 a:first-child {
+  background-color: #00704a;
+}
+
+
+/* section-2 */
+
+.section-2 {
+  width: 100%;
+  height: 573px;
+  background: url("https://image.istarbucks.co.kr/img/event/2021/2021_summer2_bean_bg.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-2-wrap>.section-2__img {
+  top: 14%;
+  left: 16%;
+}
+
+.section-2-wrap>.section-2__txt {
+  top: 32%;
+  right: 1%;
+}
+
+.section-2-wrap>.section-2__txt>.btn {
+  border: 2px solid #025964;
+  color: #025964;
+  transition: .7s;
+}
+
+.section-2-wrap>.section-2__txt>.btn:hover {
+  background-color: #025964;
+  color: white;
+}
+
+/* section-3 */
+
+.section-3 {
+  width: 100%;
+  height: 400px;
+  background: url("https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_sundried_brazil_bg2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-3::before {
+  content: "";
+  width: 214px;
+  height: 130px;
+  display: block;
+  background: url("https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_sundried_brazil_bg_shape.png") no-repeat left top;
+  position: absolute;
+  top: 47px;
+}
+
+.section-3__txt {
+  max-width: 1080px;
+  padding-top: 94px;
+}
+
+.section-3__btn {
+  max-width: 1080px;
+  padding-top: 20px;
+  padding-left: 268px;
+}
+
+.section-3__btn>.btn {
+  border: 2px solid #815932;
+  color: #815932;
+  padding-left: 25px;
+  padding-right: 25px;
+  transition: .7s;
+}
+
+.section-3__btn>.btn:hover {
+  background-color: #815932;
+  color: white;
+}
+
+
+/* section-4 */
+
+.section-4 {
+  background: url("https://www.starbucks.co.kr/common/img/main/fav_prod_bg_new.jpg") center center fixed no-repeat;
+  background-size: auto 100%;
+  height: 800px;
+}
+
+.section-4-wrap {
+  width: 1280px;
+}
+
+.section-4__txt-1 {
+  top: 120px;
+  left: 200px;
+}
+
+.section-4__txt-2 {
+  top: 370px;
+  left: 92px;
+}
+
+.section-4__img {
+  top: 100px;
+  right: -10px;
+}
+
+.section-4__btn {
+  top: 570px;
+  left: 320px;
+  border: 2px solid white;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  transition: .7s;
+}
+
+.section-4__btn:hover {
+  color: black;
+  background-color: white;
+}
+
+/* secton-5 */
+
+.section-5 {
+  height: 695px;
+}
+
+.section-5-wrap {
+  width: 1240px;
+  padding: 90px 0;
+}
+
+.section-5-wrap::before {
+  content: "";
+  width: 1px;
+  height: 64%;
+  background-color: #cccccb;
+  position: absolute;
+  top: 136px;
+  left: 44%;
+}
+
+.section-5-wrap::after {
+  content: "";
+  height: 1px;
+  width: 95%;
+  background-color: #cccccb;
+  position: absolute;
+  top: 61.5%;
+  left: 9.5%;
+}
+
+
+.section-5__img-left {
+  margin-left: 3%;
+  width: 38.5%;
+  z-index: 1;
+}
+
+.section-5__img-left>img {
+  max-width: 100%;
+}
+
+.section-5__img-right {
+  width: 45.6%;
+  margin-left: 6%;
+  padding-right: 3.5%;
+  vertical-align: top;
+}
+
+.section-5__img-right>img {
+  padding-top: 32%;
+}
+
+
+.section-5__btn {
+  width: 287px;
+  height: 17px;
+  bottom: 30%;
+  margin-left: calc(50% - 30px);
+  padding: 10px;
+  box-sizing: content-box;
+  transition: .7s;
+}
+
+.section-5__btn>a {
+  background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2020/btn_magazine_pc.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.section-5__btn:hover {
+  background-color: #976d3f;
+}
+
+.section-5__btn:hover>a {
+  background-position: 0 -17px;
+}
+
+
+/* section-6 */
+
+.section-6 {
+  height: 400px;
+  background: url("https://www.starbucks.co.kr/common/img/main/store_bg.jpg")
+}
+
+.section-6-wrap {
+  width: 1280px;
+  overflow: hidden;
+}
+
+.section-6__img-1 {
+  top: 0;
+  left: 160px;
+}
+
+.section-6__img-2 {
+  top: 149px;
+  left: 390px;
+}
+
+.section-6__img-3 {
+  top: -60px;
+  left: 520px;
+}
+
+.section-6__img-4 {
+  top: 298px;
+  right: 30px;
+}
+
+.section-6__txt {
+  top: 100px;
+  right: 200px;
+}
+
+.section-6__btn>a {
+  border: 2px solid #222;
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: .7s;
+}
+
+.section-6__btn>a:hover {
+  background-color: #222;
+  color: white;
+}
